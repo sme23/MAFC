@@ -1,0 +1,120 @@
+#define FreeSpace 0xb2a610
+#define FreeSpaceBLRange 0x1c1ec0
+
+#define IsPointer 0x08000000
+
+#define ChapterTileset(chapter, object, palette, config) "PUSH; ORG 0x8b0890 + (148* chapter) + 4; SHORT object; BYTE palette config; POP"
+#define ChapterTileAnims(chapter, anim1, anim2) "PUSH; ORG 0x8b0890 + (148* chapter) + 9; BYTE anim1 anim2; POP"
+
+#ifndef ItemTable
+  #define ItemTable 0x809B10
+#endif
+
+#ifndef DebuffTable
+  #define DebuffTable     0x0203F100
+  #define DebuffTableSize 0x00000900
+#endif
+
+#ifndef WeaponDebuffTable
+    #define WeaponDebuffTable DebuffTable
+#endif
+
+#define LunarBrace MoonBracelet
+#define SolarBrace SunBracelet
+
+#include "Engine Hacks/Skill System/skill_definitions.event"
+//#include "Tables/Table Definitions.txt"
+
+//Event Helpers
+
+#define EndConvo "CALL $9EE2C4"
+
+#define GiveItem(item,character) "SVAL 0x3 item; GIVEITEMTO character"
+
+//Character Defs
+
+
+//Class Defs
+
+#define PegasusKnight_F PegasusKnight
+#define Necrodragon 0x65
+#define Falcoknight FalcoKnight
+
+//Item Defs
+
+//Affinity
+
+#define AffinityNone 0
+#define AffinityFire 1
+#define AffinityThunder 2
+#define AffinityWind 3
+#define AffinityIce 4
+#define AffinityDark 5
+#define AffinityLight 6
+#define AffinityAnima 7
+#define AffinityLightning AffinityThunder
+#define AfinnityAnima AffinityAnima
+
+
+//item stat boost sets
+
+#define StatBoosts(HP,Str,Skl,Spd,Def,Res,Lck,Mov,Con) "BYTE HP Str Skl Spd Def Res Lck Mov Con 0x00 0x00 0x00"
+
+
+//Music Definitions
+
+//#define __NewMusicDefs__
+
+//Dumb shit
+
+#define UnlockAllGuideEntries "ENUT 0xB4;ENUT 0xB5;ENUT 0xB6;ENUT 0xB7;ENUT 0xB8;ENUT 0xB9;ENUT 0xBA;ENUT 0xBB;ENUT 0xBC;ENUT 0xBD;ENUT 0xBE;ENUT 0xBF;ENUT 0xC0;ENUT 0xC1;ENUT 0xC2;ENUT 0xC3;ENUT 0xC4;ENUT 0xC5;ENUT 0xC6;ENUT 0xC7;ENUT 0xC8;ENUT 0xC9;ENUT 0xCA;ENUT 0xCB;ENUT 0xCC;ENUT 0xCD;ENUT 0xCE;ENUT 0xCF;ENUT 0xD0;ENUT 0xD1;ENUT 0xD2;ENUT 0xD3;ENUT 0xD4;ENUT 0xD5;ENUT 0xD6;ENUT 0xD7;ENUT 0xD8;ENUT 0xD9;ENUT 0xDA;ENUT 0xDB;ENUT 0xDC;ENUT 0xDD;ENUT 0xDE;ENUT 0xDF;ENUT 0xE0;ENUT 0xE1;ENUT 0xE2;ENUT 0xE3;ENUT 0xE4;ENUT 0xE5;ENUT 0xE6;ENUT 0xE7;ENUT 0xE8;ENUT 0xE9;ENUT 0xEA;ENUT 0xEB"
+
+#define ReturningUnit(charID,x,y) "UNIT charID 0x0 0x0 0x0 [x,y] 0x0 0x0 0x0 0x1 NoItems NoAI"
+
+#define ResetGlobalFlags "ENUF 102;ENUF 103;ENUF 104;ENUF 105;ENUF 106;ENUF 107;ENUF 108;ENUF 109;ENUF 110;ENUF 111;ENUF 112;ENUF 113;ENUF 114;ENUF 115;ENUF 116;ENUF 117;ENUF 118;ENUF 119;ENUF 120;ENUF 121;ENUF 122;ENUF 123;ENUF 124;ENUF 125;ENUF 126;ENUF 127;ENUF 128;ENUF 129;ENUF 130;ENUF 131;ENUF 132;ENUF 133;ENUF 134;ENUF 135;ENUF 136;ENUF 137;ENUF 138;ENUF 139;ENUF 140;ENUF 141;ENUF 142;ENUF 143;ENUF 144;ENUF 145;ENUF 146;ENUF 147;ENUF 148;ENUF 149;ENUF 150;ENUF 151;ENUF 152;ENUF 153;ENUF 154;ENUF 155;ENUF 156;ENUF 157;ENUF 158;ENUF 159;ENUF 160;ENUF 161;ENUF 162;ENUF 163;ENUF 164;ENUF 165;ENUF 166;ENUF 167;ENUF 168;ENUF 169;ENUF 170;ENUF 171;ENUF 172;ENUF 173;ENUF 174;ENUF 175;ENUF 176;ENUF 177;ENUF 178;ENUF 179;ENUF 236;ENUF 237;ENUF 238;ENUF 239"
+
+//Goal text defs
+
+#define SurviveWindowText 0x19C
+#define DefeatBossWindowText 0x19D
+#define RoutWindowText 0x19E
+#define SeizeGateWindowText 0x19F
+#define SeizeThroneWindowText 0x1A1
+
+
+//Chapter IDs
+
+//Spell anim IDs
+#define HandAxeAnim 0x1
+#define ArrowAnim 0x2
+#define FireAnim 0x16
+#define ElfireAnim 0x17
+#define ThunderAnim 0x19
+#define BoltingAnim 0x1A
+#define FimbulvetrAnim 0x1B
+#define FluxAnim 0x1D
+#define NosferatuAnim 0x1E
+#define LightningAnim 0x1F
+#define PurgeAnim 0x20
+#define DivineAnim 0x22
+#define EclipseAnim 0x24
+#define FenrirAnim 0x25
+#define ShineAnim 0x33
+#define LunaSpellAnim 0x34
+#define ExcaliburAnim 0x35
+#define AuraAnim 0x37
+#define StoneAnim 0x3E
+#define IvaldiAnim 0x3F
+#define DemonLightAnim 0x40
+#define GleipnirAnim 0x41
+#define CrimsonEyeAnim 0x42
+#define EvilEyeAnim 0x43
+#define ShadowshotAnim 0x44
+#define DemonSurgeAnim 0x45
+#define NaglfarAnim 0x46
+#define WretchedBreathAnim 0x47
+
+#define ChangeWeaponRank(Character,WeaponRank,Value) "SVAL 1 Character; SVAL 2 WeaponRank; SVAL 3 Value; ASMC ChangeWeaponRankASMC|1"
+
+//#define NightVillageInsideBG 0x6
+//#define NightVillageOutsideBG 0x14
