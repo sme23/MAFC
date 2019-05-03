@@ -8,18 +8,9 @@ ORG 0xb2a610
 
 
 //Text first for Text ID definitions
-//#include "Text/Install Text Data.event"
-/* #ifdef __DEBUG__
-  ALIGN 4
-  TxtData0x0D4B:
-    String("DEBUG BUILD")
-	BYTE 0
-#else
-  ALIGN 4
-  TxtData0x0D4B:
-    String("Donate to Circles")
-	BYTE 0
-#endif */
+#include "Text/repointedTextTable.event"
+#include "Text/Install Text Data.event"
+
 MESSAGE Used text space ends at currentOffset
 
 //Graphics
@@ -37,11 +28,11 @@ ORG 0x1040250
 
 //CSV tables
 //#include "Tables/MiscTableData.event"
-//#include "Tables/Table Installer.event"
+#include "Tables/Table Installer.event"
 MESSAGE Used table space ends at currentOffset
 
 //Engine Hacks
-//#include "Engine Hacks/_MasterHackInstaller.event"
+#include "Engine Hacks/_MasterHackInstaller.event"
 MESSAGE Used hax space ends at currentOffset
 
 //Maps

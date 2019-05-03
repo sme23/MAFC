@@ -1,10 +1,15 @@
 #define FreeSpace 0xb2a610
 #define FreeSpaceBLRange 0x1c1ec0
 
-#define IsPointer 0x08000000
+#ifndef IsPointer
+  #define IsPointer 0x08000000
+#endif
 
 #define ChapterTileset(chapter, object, palette, config) "PUSH; ORG 0x8b0890 + (148* chapter) + 4; SHORT object; BYTE palette config; POP"
 #define ChapterTileAnims(chapter, anim1, anim2) "PUSH; ORG 0x8b0890 + (148* chapter) + 9; BYTE anim1 anim2; POP"
+
+#define SpellAssociationTable 0x8afbd8
+
 
 #ifndef ItemTable
   #define ItemTable 0x809B10
@@ -33,12 +38,17 @@
 
 //Character Defs
 
+#define Orson OrsonCC
+#define Selena SelenaCC
+#define Valter ValterCC
 
 //Class Defs
 
 #define PegasusKnight_F PegasusKnight
 #define Necrodragon 0x65
 #define Falcoknight FalcoKnight
+#define Villager Journeyman_2
+#define Villager_F Pupil_2
 
 //Item Defs
 
