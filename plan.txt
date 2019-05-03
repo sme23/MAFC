@@ -1,0 +1,71 @@
+Branching promos be like
+
+Villager (M)
+1. Mercenary (Sword)
+2. Cavalier (Sword, Lance)
+3. Myrmidon (Sword)
+4. Thief (Sword)
+5. 
+
+Villager (F)
+1. Myrmidon (Sword)
+2. Cavalier (Sword, Lance)
+3. Pegasus Knight (Sword, Lance)
+4. Thief (Sword)
+5. 
+
+Pupil
+1. Mage (Anima)
+2. Monk (Light)
+3. Shaman (Dark)
+4. Priest (Staff)
+5. 
+
+Recruit
+1. Soldier (Lance)
+2. Pegasus Knight (Lance)
+3. Knight (Lance)
+4. Wyvern Rider (Lance, Axe)
+5. 
+
+Journeyman
+1. Fighter (Axe)
+2. Brigand (Axe)
+3. Pirate (Axe)
+4. Wyvern Rider (Lance, Axe)
+5. 
+
+Your army is entirely trainees
+Unit stats and classes carry through reset? (maybe)
+zero story ideas
+zero ideas on how you'll see valkyrie anims since probably won't promote from past trainee level
+
+characters:
+-Ross (Journeyman)
+-Amelia (Recruit)
+-Ewan (Pupil)
+(ofc)
+
+-Nino (Pupil F)
+-Atlas (Journeyman)
+-Faye (Villager F)
+-Delthea (Pupil F)
+-Est (Recruit)
+-Mozu (Villager F)
+-Tobin (Villager M)
+-Gray (Villager M)
+
+
+You can pick 6(?) of them when you begin; team comp is up to you, so you can take them by base weapon type and promote however you want to build the team comp you want
+Maybe do Paragon on all of them? as class skills even
+
+enemies are all early game prepromotes (with normal base stats, ofc)
+-Jagen
+-Arran
+-Boah
+-Marcus
+-Seth
+-Titania
+-Sothe
+
+dunno how tf can make it fun to play though
