@@ -14,7 +14,7 @@ ORG 0xb2a610
 MESSAGE Used text space ends at currentOffset
 
 //Graphics
-//#include "Graphics/_Master Graphics Installer.event"
+#include "Graphics/_Master Graphics Installer.event"
 //#include "Palettes/Palette Setup.event"
 
 MESSAGE First block ends at currentOffset
@@ -22,9 +22,6 @@ MESSAGE First block ends at currentOffset
 ASSERT 0xC00000 - CURRENTOFFSET
 
 ORG 0x1040250
-
-//#include "Animations/_Master Animation Installer.event"
-//#include "Graphics/Spells/Master Spell Installer.event"
 
 //CSV tables
 //#include "Tables/MiscTableData.event"

@@ -1,0 +1,72 @@
+#ifndef ClassAnimTable
+  #ifdef _FE8_
+    #define ClassAnimTable (0xc00008-0x20)
+  #endif
+  #ifdef _FE7_
+    #define ClassAnimTable (0xe00008-0x20)
+  #endif
+#endif
+
+#define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
+
+
+//at some point I'll get back to fixing the animation table here but until then, the hard way
+//#include "expandanimtableinstaller.event"
+
+//#define AnimTableEntry(index) "ORG ClassAnimTable + ((index-0x1) * 0x20)"
+
+//////////////Installed animations go here:
+
+{
+#include "Cleric Staff Installer.event"
+}
+{
+#include "Cleric Unarmed Installer.event"
+}
+{
+#include "Valkyrie Magic Installer.event"
+}
+{
+#include "Valkyrie Staff Installer.event"
+}
+{
+#include "VillagerF Sword Installer.event"
+}
+{
+#include "VillagerF Unarmed Installer.event"
+}
+{
+#include "VillagerM Sword Installer.event"
+}
+{
+#include "VillagerM Unarmed Installer.event"
+}
+
+//////////////////////////////////////////////
+
+#define Item 9
+#define Spears 1
+#define SwordAnim(Animation) "BYTE Swords 0x01 ; SHORT Animation"
+#define LanceAnim(Animation) "BYTE Spears 0x01 ; SHORT Animation"
+#define AxeAnim(Animation) "BYTE Axes 0x01 ; SHORT Animation"
+#define HandAxeAnim(Animation) "BYTE HandAxe 0x00 ; SHORT Animation ; BYTE Tomahawk 0x00 ; SHORT Animation ; BYTE Hatchet 0x00 ; SHORT Animation"
+#define BowAnim(Animation) "BYTE Bows 0x01 ; SHORT Animation"
+#define StaffAnim(Animation) "BYTE Staves 0x01 ; SHORT Animation"
+#define AnimaAnim(Animation) "BYTE Anima 0x01 ; SHORT Animation"
+#define LightAnim(Animation) "BYTE Light 0x01 ; SHORT Animation"
+#define DarkAnim(Animation) "BYTE Dark 0x01 ; SHORT Animation"
+#define UnarmedAnim(Animation) "BYTE Item 0x01 ; SHORT Animation"
+#define SpecialAnim(Animation,Weapon) "BYTE Weapon 0x00 ; SHORT Animation"
+#define MonsterAnim(Animation) "BYTE 0xB 0x01; SHORT Animation"
+
+///////////////////////////////////////////////
+
+VillagerAnim:
+SwordAnim(0x92)
+UnarmedAnim(0x93)
+WORD 0x0
+
+VillagerFAnim:
+SwordAnim(0x94)
+UnarmedAnim(0x95)
+WORD 0x0
