@@ -1,0 +1,37 @@
+#define StandingMapSprite(aId, width, height, gfxPointer) "PUSH; ORG 0x8AF880 + (aId * 8); SHORT height width; POIN gfxPointer; POP"
+#define MovingMapSprite(aId, apPointer, gfxPointer) "PUSH; ORG 0x9A2E00 + ((aId - 1) * 8); POIN gfxPointer apPointer; POP"
+
+StandingMapSprite(0x2D,2,0,MVillagerStand)
+MovingMapSprite(0x7E,$201338,MVillagerMove)
+
+StandingMapSprite(0x2E,2,0,FVillagerStand)
+MovingMapSprite(0x7F,$201B84,FVillagerMove)
+
+StandingMapSprite(0x3F,2,0,SoldierStand)
+MovingMapSprite(0x4E,$1EDBC4,SoldierMove)
+
+ALIGN 4
+MVillagerStand:
+#incext Png2Dmp "[T0][SWD] Villager (M) Sword Standing {HyperGammeSpaces}.png" --lz77
+
+ALIGN 4
+MVillagerMove:
+#incext Png2Dmp "[T0][SWD] Villager (M) Sword Moving {HyperGammeSpaces}.png" --lz77
+
+ALIGN 4
+FVillagerStand:
+#incext Png2Dmp "[T0][SWD] Villager (F) Sword Standing {HyperGammeSpaces}.png" --lz77
+
+ALIGN 4
+FVillagerMove:
+#incext Png2Dmp "[T0][SWD] Villager (F) Sword Moving {HyperGammeSpaces}.png" --lz77
+
+ALIGN 4
+SoldierStand:
+#incext Png2Dmp "[T1][LNC] Soldier (M) (Alt) Lance Standing {Alusq).png" --lz77
+
+ALIGN 4
+SoldierMove:
+#incext Png2Dmp "[T1][LNC] Soldier (M) (Alt) Lance Moving {Alusq}.png" --lz77
+
+

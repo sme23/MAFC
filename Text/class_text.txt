@@ -1,0 +1,7 @@
+##VillagerName
+Villager[X]
+
+##VillagerDesc
+Normal civilians with little[NL]
+battle experience. Equip: Swords[X]
+

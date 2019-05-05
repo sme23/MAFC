@@ -24,10 +24,31 @@
 #include "Cleric Unarmed Installer.event"
 }
 {
-#include "Valkyrie Magic Installer.event"
+#include "Eirika Magic Installer.event"
 }
 {
-#include "Valkyrie Staff Installer.event"
+#include "Joshua T1 Sword Installer.event"
+}
+{
+#include "Joshua T1 Unarmed Installer.event"
+}
+{
+#include "Joshua T2 Sword Installer.event"
+}
+{
+#include "Joshua T2 Unarmed Installer.event"
+}
+{
+#include "Merc Sword Installer.event"
+}
+{
+#include "Merc Unarmed Installer.event"
+}
+{
+#include "Soldier Lance Installer.event"
+}
+{
+#include "Soldier Unarmed Installer.event"
 }
 {
 #include "VillagerF Sword Installer.event"
@@ -69,4 +90,11 @@ WORD 0x0
 VillagerFAnim:
 SwordAnim(0x94)
 UnarmedAnim(0x95)
+WORD 0x0
+
+NewEirikaAnim:
+AnimaAnim(4)
+LightAnim(4)
+DarkAnim(4)
+UnarmedAnim(4)
 WORD 0x0

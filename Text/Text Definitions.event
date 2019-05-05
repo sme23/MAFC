@@ -234,5 +234,7 @@
 #define SD_PointBlank $E0E
 #define SD_Perfectionist $E0F
 #define SD_Puissance $E10
+#define VillagerName $E11
+#define VillagerDesc $E12
 
 #endif // TEXT_DEFINITIONS_TEXT_BUILDFILE_TXT

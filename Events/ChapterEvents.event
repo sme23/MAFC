@@ -1,0 +1,144 @@
+
+EventPointerTable(0x7,ChapterEvents)
+
+ChapterEvents:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN PlayerUnits PlayerUnits
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+PlayerUnits:
+UNIT
+
+EnemyUnits:
+UNIT
+
+TurnBasedEvents:
+END_MAIN
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+House(0,HouseEvent1,1,9)
+House(0,HouseEvent2,3,10)
+House(0,HouseEvent3,1,12)
+Vendor(VendorList,0,11)
+Armory(ArmoryList,2,12)
+Village(7,VillageEvent1,11,10)
+Village(8,VillageEvent2,15,8)
+Village(9,VillageEvent3,6,1)
+Seize(16,2)
+END_MAIN
+
+ALIGN 4
+VendorList:
+SHLI Fire Thunder Lightning Shine Flux Heal Mend Barrier Vulnerary Elixir PureWater 
+
+ALIGN 4
+ArmoryList:
+SHLI IronSword SteelSword IronLance SteelLance Javelin IronAxe SteelAxe HandAxe IronBow SteelBow 
+
+ALIGN 4
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+//DO NOT TOUCH
+WORD $00
+
+Tutorial:
+//DO NOT TOUCH
+WORD $00
+
+TrapData:
+END_MAIN
+
+BeginningScene:
+ENDA
+
+EndingScene:
+ENDA
+
+HouseEvent1:
+ENDA
+
+HouseEvent2:
+ENDA
+
+HouseEvent3:
+ENDA
+
+VillageEvent1:
+ENDA
+
+VillageEvent2:
+ENDA
+
+VillageEvent3:
+ENDA
+
+
+FleetUnitGroup:
+UNIT 128 Fleet Vigarde Level(5,Enemy,1) [0,20] 0x0 0x0 0x1 REDA0R20 [KillerBallista] NoAI
+UNIT
+
+PirateUnitGroup:
+UNIT 128 Pirate Vigarde Level(3,Enemy,1) [10,19] 0x0 0x0 0x1 REDA10R19 [IronAxe] NoAI
+UNIT
+
+MercenaryUnitGroup:
+UNIT 128 Mercenary Vigarde Level(3,Enemy,1) [8,14] 0x0 0x0 0x1 REDA8R14 [IronSword] NoAI
+UNIT
+
+WyvernUnitGroup:
+UNIT 128 WyvernRider Vigarde Level(5,Enemy,1) [18,5] 0x0 0x0 0x1 REDA18R5 [SteelLance] NoAI
+UNIT
+
+CavalierUnitGroup:
+UNIT 128 Cavalier Vigarde Level(4,Enemy,1) [8,8] 0x0 0x0 0x1 REDA8R8 [IronLance] NoAI
+UNIT
+
+BrigandUnitGroup:
+UNIT 128 Brigand Vigarde Level(5,Enemy,1) [0,0] 0x0 0x0 0x1 REDA0R0 [IronAxe] NoAI
+UNIT
+
+SoldierUnitGroup:
+UNIT 128 Soldier Vigarde Level(3,Enemy,1) [4,6] 0x0 0x0 0x1 REDA4R6 [IronLance] NoAI
+UNIT
+
+FighterUnitGroup:
+UNIT 128 Fighter Vigarde Level(1,Enemy,1) [14,18] 0x0 0x0 0x1 REDA14R18 [IronAxe] NoAI
+UNIT
+
+ShamanUnitGroup:
+UNIT 128 Shaman Vigarde Level(2,Enemy,1) [8,3] 0x0 0x0 0x1 REDA8R3 [Flux] NoAI
+UNIT
+
+MageUnitGroup:
+UNIT 128 Mage Vigarde Level(4,Enemy,1) [4,13] 0x0 0x0 0x1 REDA4R13 [Fire] NoAI
+UNIT
+
+/*
+Turn 0: Fighter, Pirate
+Turn 1: Fighter, Pirate
+Turn 2: Pirate, Mercenary
+Turn 3: Pirate, Mercenary, Cavalier
+Turn 4: Fleet, Mage, Mercenary
+Turn 5: Soldier, Soldier, Cavalier, Mercenary
+Turn 6: Brigand, Soldier, Cavalier, Mage
+Turn 7: Shaman, Mage, Soldier, Cavalier, Mercenary, Fighter, Fighter, Fighter, Pirate, Pirate
+Turn 8: Wyvern, Cavalier, Soldier, Soldier, Soldier
+Turn 9: Fleet, Mercenary, Shaman, Shaman, Brigand
+Turn 10: Wyvern, Brigand, Mage, Mage, Fighter, Fighter, Pirate
+dunno from here but prolly doesn't matter too much just cycle through everything
+*/
+
+

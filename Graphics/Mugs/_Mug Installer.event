@@ -1,0 +1,29 @@
+AmeliaPortrait:
+#incext PortraitFormatter "Amelia.png"
+
+EirikaPortrait:
+#incext PortraitFormatter "Eirika.png"
+
+JoshuaPortrait:
+#incext PortraitFormatter "Joshua.png"
+
+NatashaPortrait:
+#incext PortraitFormatter "Natasha.png"
+
+RossPortrait:
+#incext PortraitFormatter "Ross.png"
+
+
+#define JoshuaMug 2
+#define EirikaMug 3
+#define NatashaMug 4
+#define AmeliaMug 5
+#define RossMug 6
+
+
+setMugEntry(AmeliaMug, AmeliaPortrait, 2, 6, 3, 4)
+setMugEntry(EirikaMug, EirikaPortrait, 2, 6, 3, 4)
+setMugEntry(NatashaMug, NatashaPortrait, 2, 6, 3, 4)
+setMugEntry(RossMug, RossPortrait, 3, 6, 3, 4)
+setMugEntry(JoshuaMug, JoshuaPortrait, 2, 5, 3, 3)
+

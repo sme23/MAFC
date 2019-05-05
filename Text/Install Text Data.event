@@ -937,6 +937,14 @@ __TEXTPROCESSE10:
 #incbin ".TextEntries\text_buildfileSD_Puissance.fetxt.dmp"
 setText($E10, __TEXTPROCESSE10)
 
+__TEXTPROCESSE11:
+#incbin ".TextEntries\text_buildfileVillagerName.fetxt.dmp"
+setText($E11, __TEXTPROCESSE11)
+
+__TEXTPROCESSE12:
+#incbin ".TextEntries\text_buildfileVillagerDesc.fetxt.dmp"
+setText($E12, __TEXTPROCESSE12)
+
 }
 
 #endif // TEXT_INSTALLER_TEXT_BUILDFILE_TXT

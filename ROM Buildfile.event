@@ -40,7 +40,7 @@ MESSAGE Used hax space ends at currentOffset
 	
 //Events
 //#include "Events/Master Event Installer.event"
-//#include "Events/World Map Events Installer.event"
+#include "Events/World Map Events Installer.event"
 
 PUSH
 ORG 0xD74D0
