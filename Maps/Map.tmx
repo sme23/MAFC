@@ -4,6 +4,16 @@
   <image source="tilesets/01000203.png" width="512" height="512"/>
  </tileset>
  <layer id="2" name="Tile Layer 1" width="19" height="21">
+  <properties>
+   <property name="Anims1" value="5"/>
+   <property name="Anims2" value="0"/>
+   <property name="ChapterID" value="0"/>
+   <property name="Main" value=""/>
+   <property name="MapID" value="4"/>
+   <property name="ObjectType" value="1"/>
+   <property name="PaletteID" value="2"/>
+   <property name="TileConfig" value="3"/>
+  </properties>
   <data encoding="csv">
 161,715,593,633,99,808,809,810,164,783,817,818,817,818,784,977,943,978,67,
 817,818,597,630,68,872,875,874,67,163,849,850,849,850,816,974,975,976,131,

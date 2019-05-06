@@ -1,22 +1,22 @@
 //Characters
-#define Eirika 0x01
+//#define Eirika 0x01
 #define Seth 0x02
 #define Gilliam 0x03
 #define Franz 0x04
 #define Moulder 0x05
 #define Vanessa 0x06
-#define Ross 0x07
+//#define Ross 0x07
 #define Neimi 0x08
 #define Colm 0x09
 #define Garcia 0x0A
 #define Innes 0x0B
 #define Lute 0x0C
-#define Natasha 0x0D
+//#define Natasha 0x0D
 #define Cormag 0x0E
 #define Ephraim 0x0F
 #define Forde 0x10
 #define Kyle 0x11
-#define Amelia 0x12
+//#define Amelia 0x12
 #define Artur 0x13
 #define Gerik 0x14
 #define Tethys 0x15
@@ -29,7 +29,7 @@
 #define Duessel 0x1D
 #define Myrrh 0x1E
 #define Knoll 0x1F
-#define Joshua 0x20
+//#define Joshua 0x20
 #define Syrene 0x21
 #define Tana 0x22
 #define LyonCC 0x23

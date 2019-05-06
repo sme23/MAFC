@@ -14,6 +14,11 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 PlayerUnits:
+UNIT Joshua Myrmidon Joshua Level(8,Ally,0) [18,18] 0x0 0x0 0x1 REDA16R18 [KillingEdge,HeroCrest] NoAI
+UNIT Eirika EirikaLord Joshua Level(10,Ally,0) [18,18] 0x0 0x0 0x1 REDA15R20 [Lightning] NoAI
+UNIT Natasha Cleric Joshua Level(10,Ally,0) [18,18] 0x0 0x0 0x1 REDA17R19 [Mend,Rescue] NoAI
+UNIT Amelia Villager_F Joshua Level(3,Ally,0) [18,18] 0x0 0x0 0x1 REDA16R19 [IronSword] NoAI
+UNIT Ross Villager Joshua Level(3,Ally,0) [18,18] 0x0 0x0 0x1 REDA15R19 [IronSword] NoAI
 UNIT
 
 EnemyUnits:
@@ -62,6 +67,10 @@ TrapData:
 END_MAIN
 
 BeginningScene:
+LOAD1 0x1 PlayerUnits
+ENUN
+Text(PlestText)
+NoFade
 ENDA
 
 EndingScene:

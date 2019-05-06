@@ -1,14 +1,17 @@
 #define StandingMapSprite(aId, width, height, gfxPointer) "PUSH; ORG 0x8AF880 + (aId * 8); SHORT height width; POIN gfxPointer; POP"
 #define MovingMapSprite(aId, apPointer, gfxPointer) "PUSH; ORG 0x9A2E00 + ((aId - 1) * 8); POIN gfxPointer apPointer; POP"
 
-StandingMapSprite(0x2D,2,0,MVillagerStand)
+StandingMapSprite(0x2D,0,2,MVillagerStand)
 MovingMapSprite(0x7E,$201338,MVillagerMove)
 
-StandingMapSprite(0x2E,2,0,FVillagerStand)
+StandingMapSprite(0x2E,0,2,FVillagerStand)
 MovingMapSprite(0x7F,$201B84,FVillagerMove)
 
-StandingMapSprite(0x3F,2,0,SoldierStand)
+StandingMapSprite(0x3F,0,2,SoldierStand)
 MovingMapSprite(0x4E,$1EDBC4,SoldierMove)
+
+StandingMapSprite(0x1,0,0,EirikaStand)
+MovingMapSprite(0x2,$1C3D7C,EirikaMove)
 
 ALIGN 4
 MVillagerStand:
@@ -34,4 +37,10 @@ ALIGN 4
 SoldierMove:
 #incext Png2Dmp "[T1][LNC] Soldier (M) (Alt) Lance Moving {Alusq}.png" --lz77
 
+ALIGN 4
+EirikaStand:
+#incext Png2Dmp "[T1] Lord (F) (Eirika) Magic Standing {MeatOfJustice}.png" --lz77
 
+ALIGN 4
+EirikaMove:
+#incext Png2Dmp "[T1] Lord (F) (Eirika) Magic Moving {MeatOfJustice}.png" --lz77

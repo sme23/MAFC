@@ -42,6 +42,12 @@
 #define Selena SelenaCC
 #define Valter ValterCC
 
+#define Joshua 1
+#define Eirika 2
+#define Natasha 3
+#define Amelia 4
+#define Ross 5
+
 //Class Defs
 
 #define PegasusKnight_F PegasusKnight

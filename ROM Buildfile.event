@@ -21,7 +21,7 @@ MESSAGE First block ends at currentOffset
 
 ASSERT 0xC00000 - CURRENTOFFSET
 
-ORG 0x1040250
+ORG 0xE47400
 
 //CSV tables
 //#include "Tables/MiscTableData.event"
@@ -33,13 +33,13 @@ MESSAGE Used table space ends at currentOffset
 MESSAGE Used hax space ends at currentOffset
 
 //Maps
-//#include "Maps/Master Map Installer.event"
+#include "Maps/Master Map Installer.event"
 	
 //Music
 //#include "Music/_Music Installer.event"
 	
 //Events
-//#include "Events/Master Event Installer.event"
+#include "Events/ChapterEvents.event"
 #include "Events/World Map Events Installer.event"
 
 PUSH

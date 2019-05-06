@@ -2,6 +2,6 @@
 
 #include eastdlib.event
 
-SetChapterData(ChapterID,ObjectType,0,PaletteID,TileConfig,map_id,Map,0,0,0)
+SetChapterData(0,1,0,2,3,4,Map,5,0,0)
 Map:
 #incbin "Map_data.dmp"
