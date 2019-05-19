@@ -14,17 +14,30 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 PlayerUnits:
-UNIT Joshua Myrmidon Joshua Level(8,Ally,0) [18,18] 0x0 0x0 0x1 REDA16R18 [KillingEdge,HeroCrest] NoAI
-UNIT Eirika EirikaLord Joshua Level(10,Ally,0) [18,18] 0x0 0x0 0x1 REDA15R20 [Lightning] NoAI
-UNIT Natasha Cleric Joshua Level(10,Ally,0) [18,18] 0x0 0x0 0x1 REDA17R19 [Mend,Rescue] NoAI
-UNIT Amelia Villager_F Joshua Level(3,Ally,0) [18,18] 0x0 0x0 0x1 REDA16R19 [IronSword] NoAI
-UNIT Ross Villager Joshua Level(3,Ally,0) [18,18] 0x0 0x0 0x1 REDA15R19 [IronSword] NoAI
+UNIT Joshua Myrmidon Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R23 [KillingEdge,HeroCrest] NoAI
+UNIT Eirika EirikaLord Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R24 [Lightning] NoAI
+UNIT Natasha Cleric Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R24 [Mend,Rescue] NoAI
+UNIT Amelia Villager_F Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R22 [IronSword,HeroCrest] NoAI
+UNIT Ross Villager Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R22 [IronSword,HeroCrest] NoAI
 UNIT
 
-EnemyUnits:
+BossUnits:
+UNIT Vigarde General Vigarde Level(5,Enemy,0) [22,2] 0x0 0x0 0x0 0x1 [ShortSpear,Elixir] NeverMoveAI
+UNIT 128 Hero Vigarde Level(2,Enemy,1) [22,2] 0x0 0x0 0x1 REDA20R3 [SteelSword,HandAxe] AttackInRangeAI 
+UNIT 128 Falcoknight Vigarde Level(2,Enemy,1) [22,2] 0x0 0x0 0x1 REDA24R3 [KillerLance] AttackInRangeAI
 UNIT
 
 TurnBasedEvents:
+TurnEventPlayer(0,Turn2Event,3)
+TurnEventPlayer(0,Turn3Event,5)
+TurnEventPlayer(0,Turn4Event,7)
+TurnEventPlayer(0,Turn5Event,9)
+TurnEventPlayer(0,Turn6Event,11)
+TurnEventPlayer(0,Turn7Event,13)
+TurnEventPlayer(0,Turn8Event,15)
+TurnEventPlayer(0,Turn9Event,17)
+TurnEventPlayer(0,Turn10Event,19)
+TurnEventPlayer(0,Turn11Event,21)
 END_MAIN
 
 CharacterBasedEvents:
@@ -34,11 +47,15 @@ LocationBasedEvents:
 House(0,HouseEvent1,1,9)
 House(0,HouseEvent2,3,10)
 House(0,HouseEvent3,1,12)
+House(0,HouseEvent4,20,20)
 Vendor(VendorList,0,11)
 Armory(ArmoryList,2,12)
 Village(7,VillageEvent1,11,10)
 Village(8,VillageEvent2,15,8)
 Village(9,VillageEvent3,6,1)
+Village(10,VillageEvent4,24,10)
+Village(11,VillageEvent5,23,18)
+Village(12,VillageEvent6,13,20)
 Seize(16,2)
 END_MAIN
 
@@ -66,10 +83,51 @@ WORD $00
 TrapData:
 END_MAIN
 
+CutsceneUnits1:
+UNIT Ross Villager 0 Level(0,Ally,0) [24,25] 0x0 0x0 0x1 REDA24R23 NoItems NoAI
+UNIT Amelia Villager_F 0 Level(0,Ally,0) [23,25] 0x0 0x0 0x1 REDA24R23 NoItems NoAI
+UNIT
+
+CutsceneUnits2:
+UNIT Joshua Myrmidon 0 Level(0,Ally,0) [24,25] 0x0 0x0 0x1 REDA24R23 NoItems NoAI
+UNIT Eirika EirikaLord 0 Level(0,Ally,0) [23,25] 0x0 0x0 0x1 REDA24R23 NoItems NoAI
+UNIT Natasha Cleric 0 Level(0,Ally,0) [22,25] 0x0 0x0 0x1 REDA24R23 NoItems NoAI
+UNIT
+
 BeginningScene:
+CAM1 [18,24]
+FADU 10
+LOAD1 0x1 CutsceneUnits1
+ENUN
+DISA Ross
+DISA Amelia
+SetBackground(HouseBG)
+MUSC Laughter
+Text(OpeningText1)
+EndConvo
+MUSC Raid
+CAM1 [24,0]
+LOAD1 0x1 BossUnits
+ENUN
+Text(OpeningText3)
+LOAD1 0x1 PirateUnitGroup2
+ENUN
+LOAD1 0x1 FighterUnitGroup1
+ENUN
+CAM1 [18,24]
+LOAD1 0x1 CutsceneUnits2
+ENUN
+DISA Eirika
+DISA Natasha
+DISA Joshua
+SetBackground(HouseBG)
+Text(OpeningText2)
+EndConvo
 LOAD1 0x1 PlayerUnits
 ENUN
-Text(PlestText)
+Text(OpeningText4)
+SVAL 0x3 0x2710
+GIVEITEMTOMAIN 0x0
 NoFade
 ENDA
 
@@ -77,77 +135,268 @@ EndingScene:
 ENDA
 
 HouseEvent1:
+Text(HouseBG,HouseText)
+NoFade
 ENDA
 
 HouseEvent2:
+Text(HouseBG,HouseText)
+NoFade
 ENDA
 
 HouseEvent3:
+Text(HouseBG,HouseText)
+NoFade
+ENDA
+
+HouseEvent4:
+Text(HouseBG,HouseText)
+NoFade
 ENDA
 
 VillageEvent1:
+Text(Village,VillageText)
+NoFade
 ENDA
 
 VillageEvent2:
+Text(Village,VillageText)
+NoFade
 ENDA
 
 VillageEvent3:
+Text(Village,VillageText)
+NoFade
 ENDA
 
+VillageEvent4:
+Text(Village,VillageText)
+NoFade
+ENDA
+
+VillageEvent5:
+Text(Village,VillageText)
+NoFade
+ENDA
+
+VillageEvent6:
+Text(Village,VillageText)
+NoFade
+ENDA
 
 FleetUnitGroup:
-UNIT 128 Fleet Vigarde Level(5,Enemy,1) [0,20] 0x0 0x0 0x1 REDA0R20 [KillerBallista] NoAI
+UNIT 128 Fleet Vigarde Level(5,Enemy,1) [0,25] 0x0 0x0 0x1 REDA0R25 [KillerBallista] NoAI
 UNIT
 
-PirateUnitGroup:
-UNIT 128 Pirate Vigarde Level(3,Enemy,1) [10,19] 0x0 0x0 0x1 REDA10R19 [IronAxe] NoAI
+PirateUnitGroup1:
+UNIT 128 Pirate Vigarde Level(3,Enemy,1) [1,18] 0x0 0x0 0x1 REDA1R18 [IronAxe] NoAI
+UNIT 128 Pirate Vigarde Level(3,Enemy,1) [2,18] 0x0 0x0 0x1 REDA2R18 [IronAxe] NoAI
+UNIT 128 Pirate Vigarde Level(3,Enemy,1) [3,18] 0x0 0x0 0x1 REDA3R18 [IronAxe] NoAI
+UNIT
+
+PirateUnitGroup2:
+UNIT 128 Pirate Vigarde Level(2,Enemy,1) [10,19] 0x0 0x0 0x1 REDA10R19 [IronAxe] NoAI
+UNIT 128 Pirate Vigarde Level(2,Enemy,1) [8,20] 0x0 0x0 0x1 REDA8R20 [IronAxe] NoAI
+UNIT
+
+PirateUnitGroup3:
+UNIT 128 Pirate Vigarde Level(4,Enemy,1) [14,24] 0x0 0x0 0x1 REDA14R24 [IronAxe] NoAI
+UNIT 128 Pirate Vigarde Level(5,Enemy,1) [15,24] 0x0 0x0 0x1 REDA15R24 [IronAxe] NoAI
 UNIT
 
 MercenaryUnitGroup:
 UNIT 128 Mercenary Vigarde Level(3,Enemy,1) [8,14] 0x0 0x0 0x1 REDA8R14 [IronSword] NoAI
+UNIT 128 Mercenary Vigarde Level(3,Enemy,1) [8,15] 0x0 0x0 0x1 REDA8R15 [IronSword] NoAI
+UNIT 128 Mercenary Vigarde Level(3,Enemy,1) [9,14] 0x0 0x0 0x1 REDA9R14 [IronSword] NoAI
 UNIT
 
 WyvernUnitGroup:
-UNIT 128 WyvernRider Vigarde Level(5,Enemy,1) [18,5] 0x0 0x0 0x1 REDA18R5 [SteelLance] NoAI
+UNIT 128 WyvernRider Vigarde Level(5,Enemy,1) [24,5] 0x0 0x0 0x1 REDA24R5 [SteelLance] NoAI
+UNIT 128 WyvernRider Vigarde Level(5,Enemy,1) [24,6] 0x0 0x0 0x1 REDA24R6 [SteelLance] NoAI
+UNIT 128 WyvernRider Vigarde Level(5,Enemy,1) [24,7] 0x0 0x0 0x1 REDA24R7 [SteelLance] NoAI
+UNIT 128 WyvernRider Vigarde Level(5,Enemy,1) [24,8] 0x0 0x0 0x1 REDA24R8 [SteelLance] NoAI
 UNIT
 
 CavalierUnitGroup:
-UNIT 128 Cavalier Vigarde Level(4,Enemy,1) [8,8] 0x0 0x0 0x1 REDA8R8 [IronLance] NoAI
+UNIT 128 Cavalier Vigarde Level(4,Enemy,1) [9,8] 0x0 0x0 0x1 REDA9R8 [IronLance] NoAI
+UNIT 128 Cavalier Vigarde Level(4,Enemy,1) [9,9] 0x0 0x0 0x1 REDA9R9 [IronLance] NoAI
 UNIT
 
 BrigandUnitGroup:
 UNIT 128 Brigand Vigarde Level(5,Enemy,1) [0,0] 0x0 0x0 0x1 REDA0R0 [IronAxe] NoAI
+UNIT 128 Brigand Vigarde Level(5,Enemy,1) [0,1] 0x0 0x0 0x1 REDA0R1 [IronAxe] NoAI
+UNIT 128 Brigand Vigarde Level(5,Enemy,1) [1,1] 0x0 0x0 0x1 REDA1R1 [IronAxe] NoAI
 UNIT
 
 SoldierUnitGroup:
 UNIT 128 Soldier Vigarde Level(3,Enemy,1) [4,6] 0x0 0x0 0x1 REDA4R6 [IronLance] NoAI
+UNIT 128 Soldier Vigarde Level(3,Enemy,1) [5,6] 0x0 0x0 0x1 REDA5R6 [IronLance] NoAI
 UNIT
 
-FighterUnitGroup:
+FighterUnitGroup1:
+UNIT 128 Fighter Vigarde Level(1,Enemy,1) [19,22] 0x0 0x0 0x1 REDA19R22 [IronAxe] NoAI
+UNIT 128 Fighter Vigarde Level(1,Enemy,1) [20,22] 0x0 0x0 0x1 REDA20R22 [IronAxe] NoAI
+UNIT 128 Fighter Vigarde Level(1,Enemy,1) [20,23] 0x0 0x0 0x1 REDA20R23 [IronAxe] NoAI
+UNIT
+
+FighterUnitGroup2:
 UNIT 128 Fighter Vigarde Level(1,Enemy,1) [14,18] 0x0 0x0 0x1 REDA14R18 [IronAxe] NoAI
+UNIT 128 Fighter Vigarde Level(1,Enemy,1) [15,17] 0x0 0x0 0x1 REDA15R17 [IronAxe] NoAI
+UNIT 128 Fighter Vigarde Level(1,Enemy,1) [15,18] 0x0 0x0 0x1 REDA15R18 [IronAxe] NoAI
+UNIT 128 Fighter Vigarde Level(1,Enemy,1) [15,19] 0x0 0x0 0x1 REDA15R19 [IronAxe] NoAI
+UNIT 128 Fighter Vigarde Level(1,Enemy,1) [16,18] 0x0 0x0 0x1 REDA16R18 [IronAxe] NoAI
 UNIT
 
 ShamanUnitGroup:
+UNIT 128 Shaman Vigarde Level(2,Enemy,1) [8,2] 0x0 0x0 0x1 REDA8R2 [Flux] NoAI
 UNIT 128 Shaman Vigarde Level(2,Enemy,1) [8,3] 0x0 0x0 0x1 REDA8R3 [Flux] NoAI
+UNIT 128 Shaman Vigarde Level(2,Enemy,1) [9,2] 0x0 0x0 0x1 REDA9R2 [Flux] NoAI
+UNIT 128 Shaman Vigarde Level(2,Enemy,1) [9,3] 0x0 0x0 0x1 REDA9R3 [Flux] NoAI
 UNIT
 
 MageUnitGroup:
+UNIT 128 Mage Vigarde Level(4,Enemy,1) [3,13] 0x0 0x0 0x1 REDA3R13 [Fire] NoAI
 UNIT 128 Mage Vigarde Level(4,Enemy,1) [4,13] 0x0 0x0 0x1 REDA4R13 [Fire] NoAI
 UNIT
 
-/*
-Turn 0: Fighter, Pirate
-Turn 1: Fighter, Pirate
-Turn 2: Pirate, Mercenary
-Turn 3: Pirate, Mercenary, Cavalier
-Turn 4: Fleet, Mage, Mercenary
-Turn 5: Soldier, Soldier, Cavalier, Mercenary
-Turn 6: Brigand, Soldier, Cavalier, Mage
-Turn 7: Shaman, Mage, Soldier, Cavalier, Mercenary, Fighter, Fighter, Fighter, Pirate, Pirate
-Turn 8: Wyvern, Cavalier, Soldier, Soldier, Soldier
-Turn 9: Fleet, Mercenary, Shaman, Shaman, Brigand
-Turn 10: Wyvern, Brigand, Mage, Mage, Fighter, Fighter, Pirate
-dunno from here but prolly doesn't matter too much just cycle through everything
-*/
+Turn2Event:
+//pirate, fighter
+LOAD1 0x1 PirateUnitGroup1
+ENUN
+LOAD1 0x1 FighterUnitGroup2
+ENUN
+NoFade
+ENDA
 
+Turn3Event:
+//pirate, merc
+LOAD1 0x1 PirateUnitGroup3
+ENUN
+LOAD1 0x1 MercenaryUnitGroup
+ENUN
+NoFade
+ENDA
 
+Turn4Event:
+//pirate, merc, cav
+LOAD1 0x1 PirateUnitGroup2
+ENUN
+LOAD1 0x1 MercenaryUnitGroup
+ENUN
+LOAD1 0x1 CavalierUnitGroup
+ENUN
+NoFade
+ENDA
+
+Turn5Event:
+//fleet, mage, merc
+LOAD1 0x1 FleetUnitGroup
+ENUN
+LOAD1 0x1 MageUnitGroup
+ENUN
+LOAD1 0x1 MercenaryUnitGroup
+ENUN
+NoFade
+ENDA
+
+Turn6Event:
+//soldier, soldier, cav, merc
+LOAD1 0x1 SoldierUnitGroup
+ENUN
+LOAD1 0x1 CavalierUnitGroup
+ENUN
+LOAD1 0x1 SoldierUnitGroup
+ENUN
+LOAD1 0x1 MercenaryUnitGroup
+ENUN
+NoFade
+ENDA
+
+Turn7Event:
+//brigand, soldier, cav, mage
+LOAD1 0x1 BrigandUnitGroup
+ENUN
+LOAD1 0x1 SoldierUnitGroup
+ENUN
+LOAD1 0x1 CavalierUnitGroup
+ENUN
+LOAD1 0x1 MageUnitGroup
+ENUN
+NoFade
+ENDA
+
+Turn8Event:
+//shaman, mage, soldier, cav, merc, fighter, fighter, fighter, pirate, pirate
+LOAD1 0x1 ShamanUnitGroup
+ENUN
+LOAD1 0x1 MageUnitGroup
+ENUN
+LOAD1 0x1 SoldierUnitGroup
+ENUN
+LOAD1 0x1 CavalierUnitGroup
+ENUN
+LOAD1 0x1 MercenaryUnitGroup
+ENUN
+LOAD1 0x1 FighterUnitGroup1
+ENUN
+LOAD1 0x1 FighterUnitGroup2
+ENUN
+LOAD1 0x1 FighterUnitGroup1
+ENUN
+LOAD1 0x1 PirateUnitGroup2
+ENUN
+LOAD1 0x1 PirateUnitGroup3
+ENUN
+NoFade
+ENDA
+
+Turn9Event:
+//wyvern, cavalier, soldier, soldier, soldier
+LOAD1 0x1 WyvernUnitGroup
+ENUN
+LOAD1 0x1 CavalierUnitGroup
+ENUN
+LOAD1 0x1 SoldierUnitGroup
+ENUN
+LOAD1 0x1 SoldierUnitGroup
+ENUN
+LOAD1 0x1 SoldierUnitGroup
+ENUN
+NoFade
+ENDA
+
+Turn10Event:
+//fleet, merc, shaman, shaman, brigand
+LOAD1 0x1 FleetUnitGroup
+ENUN
+LOAD1 0x1 MercenaryUnitGroup
+ENUN
+LOAD1 0x1 ShamanUnitGroup
+ENUN
+LOAD1 0x1 ShamanUnitGroup
+ENUN
+LOAD1 0x1 BrigandUnitGroup
+ENUN
+NoFade
+ENDA
+
+Turn11Event:
+//wyvern, brigand, mage, mage, fighter, fighter, pirate
+LOAD1 0x1 WyvernUnitGroup
+ENUN
+LOAD1 0x1 BrigandUnitGroup
+ENUN
+LOAD1 0x1 MageUnitGroup
+ENUN
+LOAD1 0x1 MageUnitGroup
+ENUN
+LOAD1 0x1 FighterUnitGroup1
+ENUN
+LOAD1 0x1 FighterUnitGroup2
+ENUN
+LOAD1 0x1 PirateUnitGroup1
+ENUN
+NoFade
+ENDA
+
+//dunno from here but prolly doesn't matter too much just cycle through everything

@@ -7,3 +7,11 @@ defWeaponDebuffs(3,0,0,0,4,4) //0x3: Steel Shuriken debuff.
 defWeaponDebuffs(0,0,4,0,4,4) //0x4: Silver Shuriken debuff.
 defWeaponDebuffs(4,0,4,0,4,4) //0x5: Pebble debuff.
 */
+
+HeroCrestPromos:
+BYTE Myrmidon Villager Villager_F 0x00
+
+PUSH
+ORG 0x8ADF57
+BYTE Myrmidon Villager Villager_F
+POP

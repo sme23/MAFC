@@ -1,0 +1,52 @@
+[OpenFarLeft][LoadEirika][OpenMidRight][LoadLute][OpenLeft][LoadJoshua]
+
+Lute, what the hell did you do!?[A][NL]
+
+There are enemy soldiers[NL]
+
+appearing all over the place![A]
+
+[OpenFarLeft]
+
+We have to do something![A][NL]
+
+We can't let them ravage[NL]
+
+across the land![A]
+
+[OpenMidRight]
+
+Unfortunately, there is not a way to disperse[NL]
+
+the illusions after they have been spawned.[A][NL]
+
+You will have to go out and do so manually.[A][MoveFarFarRight][ClearFace]
+
+[OpenLeft]
+
+Damn it[ToggleMouthMove]...[ToggleMouthMove][A][NL]
+
+Natasha![A]
+
+[OpenFarFarLeft][LoadNatasha][MoveMidRight][ClearFace][LoadNatasha]
+
+Yes, milord?[A]
+
+[OpenLeft]
+
+We're going to need your help on this one.[A][CloseSpeechSlow]
+
+[MoveFarFarLeft][ClearFace]
+
+[OpenFarLeft][MoveFarFarLeft][ClearFace]
+
+[OpenMidRight][MoveFarFarLeft][ClearFace]
+
+[OpenFarFarRight][LoadAmelia][MoveFarRight]
+
+[OpenFarFarRight][LoadRoss][MoveRight]
+
+Well, I guess this is how[NL]
+
+we'll be training today[ToggleMouthMove]...[ToggleMouthMove][A][X]
+

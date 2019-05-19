@@ -14,8 +14,6 @@
 
 #include "FE8 Nightmare modules\FE8 Skill Description Editor.event"
 
-#include "FE8 Nightmare modules\PaletteReworkAssociationEditor.event"
-
 #include "FE8 Nightmare modules\Chapter data editor\Chapter Data Editor.event"
 
 #include "FE8 Nightmare modules\Chapter data editor\Pointer table editor.event"
@@ -49,4 +47,10 @@
 #include "FE8 Nightmare modules\Item editors\Promotion Item Editor.event"
 
 #include "FE8 Nightmare modules\Item editors\Stat Bonuses Editor.event"
+
+#include "FE8 Nightmare modules\Promotion\Promotion Branch Editor.event"
+
+#include "FE8 Nightmare modules\Quote editors\Boss Quote Editor.event"
+
+#include "FE8 Nightmare modules\Quote editors\Death Quote Editor.event"
 

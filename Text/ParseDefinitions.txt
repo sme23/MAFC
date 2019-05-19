@@ -54,3 +54,7 @@
 [LoadNatasha] = [LoadFace][0x4][0x1]
 [LoadAmelia] = [LoadFace][0x5][0x1]
 [LoadRoss] = [LoadFace][0x6][0x1]
+[LoadVigarde] = [LoadFace][0x40][0x1]
+[LoadVillagerMan] = [LoadFace][0x5C][0x1]
+[LoadVillagerWoman] = [LoadFace][0x62][0x1]
+[LoadLute] = [LoadFace][0x10][0x1]

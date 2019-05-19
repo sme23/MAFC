@@ -136,8 +136,7 @@ POP
   #include "PopupRework/PopupRework.event" // Allows to expand on vanilla popups by adding components
 
   ALIGN 4
-  #include "BranchPromo/5BranchPromos.event"
-  #include "BattlePaletteRework/BattlePaletteReworkFE8.event"
+  //#include "BattlePaletteRework/BattlePaletteReworkFE8.event"
 
   #include "UnitMenu.event"
   #include "Popups.event"
