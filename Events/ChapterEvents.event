@@ -14,17 +14,17 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 PlayerUnits:
-UNIT Joshua Myrmidon Joshua Level(6,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R23 [KillingEdge,HeroCrest] NoAI
-UNIT Eirika EirikaLord Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R24 [Lightning] NoAI
-UNIT Natasha Cleric Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R24 [Mend,Rescue] NoAI
+UNIT Joshua Myrmidon Joshua Level(6,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R22 [KillingEdge,HeroCrest] NoAI
+UNIT Eirika EirikaLord Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R24 [Lightning] NoAI
+UNIT Natasha Cleric Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R23 [Mend,Rescue] NoAI
 UNIT Amelia Villager_F Joshua Level(2,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R22 [IronSword,HeroCrest] NoAI
-UNIT Ross Villager Joshua Level(2,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R22 [IronSword,HeroCrest] NoAI
+UNIT Ross Villager Joshua Level(2,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R23 [IronSword,HeroCrest] NoAI
 UNIT
 
 BossUnits:
-UNIT Vigarde General Vigarde Level(5,Enemy,0) [22,2] 0x0 0x0 0x0 0x1 [ShortSpear,Elixir] NeverMoveAI
-UNIT 128 Hero Vigarde Level(2,Enemy,1) [22,2] 0x0 0x0 0x1 REDA20R3 [SteelSword,HandAxe] AttackInRangeAI 
-UNIT 128 Falcoknight Vigarde Level(2,Enemy,1) [22,2] 0x0 0x0 0x1 REDA24R3 [KillerLance] AttackInRangeAI
+UNIT Vigarde General Vigarde Level(1,Enemy,0) [22,2] 0x0 0x0 0x0 0x1 [ShortSpear,Elixir] NeverMoveAI
+UNIT 128 Hero Vigarde Level(1,Enemy,1) [22,2] 0x0 0x0 0x1 REDA20R3 [SteelSword,HandAxe] AttackInRangeAI
+UNIT 128 Falcoknight Vigarde Level(1,Enemy,1) [22,2] 0x0 0x0 0x1 REDA24R3 [KillerLance] AttackInRangeAI
 UNIT
 
 TurnBasedEvents:
@@ -38,6 +38,7 @@ TurnEventPlayer(0,Turn8Event,21)
 TurnEventPlayer(0,Turn9Event,24)
 TurnEventPlayer(0,Turn10Event,27)
 TurnEventPlayer(0,Turn11Event,30)
+TurnEventPlayer(0,EndSpawningTurnEvent,31)
 END_MAIN
 
 CharacterBasedEvents:
@@ -56,7 +57,6 @@ Village(9,VillageEvent3,6,1)
 Village(10,VillageEvent4,24,10)
 Village(11,VillageEvent5,23,18)
 Village(12,VillageEvent6,13,20)
-Seize(16,2)
 END_MAIN
 
 ALIGN 4
@@ -65,11 +65,12 @@ SHLI Fire Thunder Lightning Shine Flux Heal Mend Barrier Vulnerary Elixir PureWa
 
 ALIGN 4
 ArmoryList:
-SHLI IronSword SteelSword IronLance SteelLance Javelin IronAxe SteelAxe HandAxe IronBow SteelBow 
+SHLI IronSword SteelSword Lancereaver IronLance SteelLance Javelin Axereaver IronAxe SteelAxe HandAxe Swordreaver
 
 ALIGN 4
 MiscBasedEvents:
 CauseGameOverIfLordDies
+DefeatAll(EndingScene)
 END_MAIN
 
 Dunno:
@@ -126,6 +127,7 @@ EndConvo
 LOAD1 0x1 PlayerUnits
 ENUN
 Text(OpeningText4)
+CALL $591F40
 SVAL 0x3 0x2710
 GIVEITEMTOMAIN 0x0
 NoFade
@@ -134,53 +136,61 @@ ENDA
 EndingScene:
 ENDA
 
-HouseEvent1:
-Text(HouseBG,HouseText)
+HouseEvent1: //1,9
+Text(HouseBG,HouseText1)
 NoFade
 ENDA
 
-HouseEvent2:
-Text(HouseBG,HouseText)
+HouseEvent2: //3,10
+Text(HouseBG,HouseText2)
 NoFade
 ENDA
 
-HouseEvent3:
-Text(HouseBG,HouseText)
+HouseEvent3: //1,12
+Text(HouseBG,HouseText3)
 NoFade
 ENDA
 
-HouseEvent4:
-Text(HouseBG,HouseText)
+HouseEvent4: //20,20
+Text(HouseBG,HouseText4)
 NoFade
 ENDA
 
-VillageEvent1:
-Text(Village,VillageText)
+#define VillageItem(Item) "CALL $591F40; SVAL 3 Item; GIVEITEMTO 0xFFFF"
+
+VillageEvent1: //11,10
+Text(Village,VillageText1)
+VillageItem(Zanbato)
 NoFade
 ENDA
 
-VillageEvent2:
-Text(Village,VillageText)
+VillageEvent2: //15,8
+Text(Village,VillageText2)
+VillageItem(Shamshir)
 NoFade
 ENDA
 
-VillageEvent3:
-Text(Village,VillageText)
+VillageEvent3: //6,1
+Text(Village,VillageText3)
+VillageItem(WindSword)
 NoFade
 ENDA
 
-VillageEvent4:
-Text(Village,VillageText)
+VillageEvent4: //24,10
+Text(Village,VillageText4)
+VillageItem(Wyrmslayer)
 NoFade
 ENDA
 
-VillageEvent5:
-Text(Village,VillageText)
+VillageEvent5: //23,18
+Text(Village,VillageText5)
+VillageItem(SteelSword)
 NoFade
 ENDA
 
-VillageEvent6:
-Text(Village,VillageText)
+VillageEvent6: //13,20
+Text(Village,VillageText6)
+VillageItem(DevilAxe)
 NoFade
 ENDA
 
@@ -224,8 +234,8 @@ UNIT
 
 BrigandUnitGroup:
 UNIT 128 Brigand Vigarde Level(5,Enemy,1) [0,0] 0x0 0x0 0x1 REDA0R0 [IronAxe] NoAI
-UNIT 128 Brigand Vigarde Level(5,Enemy,1) [0,1] 0x0 0x0 0x1 REDA0R1 [IronAxe] NoAI
-UNIT 128 Brigand Vigarde Level(5,Enemy,1) [1,1] 0x0 0x0 0x1 REDA1R1 [IronAxe] NoAI
+UNIT 128 Brigand Vigarde Level(5,Enemy,1) [0,0] 0x0 0x0 0x1 REDA0R1 [IronAxe] NoAI
+UNIT 128 Brigand Vigarde Level(5,Enemy,1) [0,0] 0x0 0x0 0x1 REDA1R1 [IronAxe] NoAI
 UNIT
 
 SoldierUnitGroup:
@@ -260,143 +270,269 @@ UNIT 128 Mage Vigarde Level(4,Enemy,1) [4,13] 0x0 0x0 0x1 REDA4R13 [Fire] NoAI
 UNIT
 
 Turn2Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //pirate, fighter
+CAM1 [2,18]
 LOAD1 0x1 PirateUnitGroup1
 ENUN
+CAM1 [15,18]
 LOAD1 0x1 FighterUnitGroup2
 ENUN
 NoFade
 ENDA
 
 Turn3Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //pirate, merc
+CAM1 [14,24]
 LOAD1 0x1 PirateUnitGroup3
 ENUN
+CAM1 [8,15]
 LOAD1 0x1 MercenaryUnitGroup
 ENUN
 NoFade
 ENDA
 
 Turn4Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //pirate, merc, cav
+CAM1 [9,19]
 LOAD1 0x1 PirateUnitGroup2
 ENUN
+CAM1 [8,15]
 LOAD1 0x1 MercenaryUnitGroup
 ENUN
+CAM1 [9,8]
 LOAD1 0x1 CavalierUnitGroup
 ENUN
 NoFade
 ENDA
 
 Turn5Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //fleet, mage, merc
+CAM1 [0,25]
 LOAD1 0x1 FleetUnitGroup
 ENUN
+CAM1 [3,13]
 LOAD1 0x1 MageUnitGroup
 ENUN
+CAM1 [8,15]
 LOAD1 0x1 MercenaryUnitGroup
 ENUN
 NoFade
 ENDA
 
 Turn6Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //soldier, soldier, cav, merc
+CAM1 [4,6]
 LOAD1 0x1 SoldierUnitGroup
 ENUN
+CAM1 [4,6]
+LOAD1 0x1 SoldierUnitGroup
+ENUN
+CAM1 [9,8]
 LOAD1 0x1 CavalierUnitGroup
 ENUN
-LOAD1 0x1 SoldierUnitGroup
-ENUN
+CAM1 [8,15]
 LOAD1 0x1 MercenaryUnitGroup
 ENUN
 NoFade
 ENDA
 
 Turn7Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //brigand, soldier, cav, mage
+CAM1 [0,0]
 LOAD1 0x1 BrigandUnitGroup
 ENUN
+CAM1 [4,6]
 LOAD1 0x1 SoldierUnitGroup
 ENUN
+CAM1 [9,8]
 LOAD1 0x1 CavalierUnitGroup
 ENUN
+CAM1 [3,13]
 LOAD1 0x1 MageUnitGroup
 ENUN
 NoFade
 ENDA
 
 Turn8Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //shaman, mage, soldier, cav, merc, fighter, fighter, fighter, pirate, pirate
+CAM1 [8,3]
 LOAD1 0x1 ShamanUnitGroup
 ENUN
+CAM1 [3,13]
 LOAD1 0x1 MageUnitGroup
 ENUN
+CAM1 [4,6]
 LOAD1 0x1 SoldierUnitGroup
 ENUN
+CAM1 [9,8]
 LOAD1 0x1 CavalierUnitGroup
 ENUN
+CAM1 [8,15]
 LOAD1 0x1 MercenaryUnitGroup
 ENUN
+CAM1 [20,22]
 LOAD1 0x1 FighterUnitGroup1
 ENUN
+CAM1 [20,22]
+LOAD1 0x1 FighterUnitGroup1
+ENUN
+CAM1 [15,18]
 LOAD1 0x1 FighterUnitGroup2
 ENUN
-LOAD1 0x1 FighterUnitGroup1
-ENUN
+CAM1 [9,19]
 LOAD1 0x1 PirateUnitGroup2
 ENUN
+CAM1 [14,24]
 LOAD1 0x1 PirateUnitGroup3
 ENUN
 NoFade
 ENDA
 
 Turn9Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //wyvern, cavalier, soldier, soldier, soldier
+CAM1 [24,6]
 LOAD1 0x1 WyvernUnitGroup
 ENUN
+CAM1 [9,8]
 LOAD1 0x1 CavalierUnitGroup
 ENUN
+CAM1 [4,6]
 LOAD1 0x1 SoldierUnitGroup
 ENUN
+CAM1 [4,6]
 LOAD1 0x1 SoldierUnitGroup
 ENUN
+CAM1 [4,6]
 LOAD1 0x1 SoldierUnitGroup
 ENUN
 NoFade
 ENDA
 
 Turn10Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //fleet, merc, shaman, shaman, brigand
+CAM1 [0,25]
 LOAD1 0x1 FleetUnitGroup
 ENUN
+CAM1 [8,15]
 LOAD1 0x1 MercenaryUnitGroup
 ENUN
+CAM1 [8,3]
 LOAD1 0x1 ShamanUnitGroup
 ENUN
+CAM1 [8,3]
 LOAD1 0x1 ShamanUnitGroup
 ENUN
+CAM1 [0,0]
 LOAD1 0x1 BrigandUnitGroup
 ENUN
 NoFade
 ENDA
 
 Turn11Event:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+CALL RandomLuteText
 //wyvern, brigand, mage, mage, fighter, fighter, pirate
+CAM1 [24,6]
 LOAD1 0x1 WyvernUnitGroup
 ENUN
+CAM1 [0,0]
 LOAD1 0x1 BrigandUnitGroup
 ENUN
+CAM1 [3,13]
 LOAD1 0x1 MageUnitGroup
 ENUN
+CAM1 [3,13]
 LOAD1 0x1 MageUnitGroup
 ENUN
+CAM1 [20,22]
 LOAD1 0x1 FighterUnitGroup1
 ENUN
+CAM1 [15,18]
 LOAD1 0x1 FighterUnitGroup2
 ENUN
+CAM1 [2,18]
 LOAD1 0x1 PirateUnitGroup1
 ENUN
 NoFade
 ENDA
 
-//dunno from here but prolly doesn't matter too much just cycle through everything
+EndSpawningTurnEvent:
+CAM1 [18,24]
+CUMO [24,23]
+STAL 40
+CURE
+Text(LuteFixesTheMachineText)
+NoFade
+ENDA
+
+RandomLuteText:
+RANDOMNUMBER 3
+SVAL 1 1
+BNE 1 0 0xC
+Text(LuteStatement1)
+GOTO 4
+LABEL 1
+BNE 2 1 0xC
+Text(LuteStatement2)
+GOTO 4
+LABEL 2
+SVAL 1 2
+BNE 3 1 0xC
+Text(LuteStatement3)
+GOTO 4
+LABEL 3
+SVAL 1 3
+BNE 4 1 0xC
+Text(LuteStatement4)
+LABEL 4
+NoFade
+ENDA
+

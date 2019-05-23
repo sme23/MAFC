@@ -19,9 +19,11 @@ MESSAGE Used text space ends at currentOffset
 
 MESSAGE First block ends at currentOffset
 
-ASSERT 0xC00000 - CURRENTOFFSET
+ASSERT 0xC00000-CURRENTOFFSET
 
-ORG 0xE47400
+ORG 0xF00000
+
+#include "Graphics/Animations/_Master Animation Installer.event"
 
 //CSV tables
 //#include "Tables/MiscTableData.event"

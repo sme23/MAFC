@@ -124,6 +124,116 @@ I'll take all the hands we can get.[A][NL]
 Thank you.[A][X]
 
 
+##LuteStatement1
+[OpenMidRight][LoadLute]
+Hmm, this should work[ToggleMouthMove]...[ToggleMouthMove][A]
+[OpenFarFarRight][ToggleRed]
+ERROR: SPAWNING OVERFLOW[A][X]
+
+##LuteStatement2
+[OpenMidRight][LoadLute]
+This should do it[ToggleMouthMove]...[ToggleMouthMove][A]
+[OpenFarFarRight][ToggleRed]
+ERROR: UNDEFINED SPAWN COUNT[A][X]
+
+##LuteStatement3
+[OpenMidRight][LoadLute]
+What if I try[ToggleMouthMove]...[ToggleMouthMove][A]
+[OpenFarFarRight][ToggleRed]
+ERROR: SPAWN COUNT TOO LOW[A][X]
+
+##LuteStatement4
+[OpenMidRight][LoadLute]
+How about I try[ToggleMouthMove]...[ToggleMouthMove][A]
+[OpenFarFarRight][ToggleRed]
+ERROR: INCORRECT PARAMETERS[NL]
+IN CODE "UNIT"[A][X]
+
+##LuteFixesTheMachineText
+[OpenMidRight][LoadLute]
+Ah, this should do it![A]
+[OpenFarFarRight]
+No errors or warnings.[NL]
+Please continue being awesome.[A][X]
+
+##ClearConditionText
+Defeat the illusions[X]
+
+##GoalWindowText
+Rout enemy[X]
+
+##HouseText1
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerMan]
+By the gods, there's so many of them![A][NL]
+Please, you have to help defend us![A][X]
+
+##HouseText2
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerWoman]
+Oh my, what's happened to[NL]
+our peaceful little town?[A][NL]
+There are foreign soldiers[NL]
+all over the place![A][NL]
+Please, if you can,[A][NL]
+get rid of them before[NL]
+they do something horrible![A][X]
+
+##HouseText3
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerMan]
+It's days like this that I[NL]
+regret ever retiring[ToggleMouthMove]...[ToggleMouthMove][A][NL]
+What did I do?[A][NL]
+I was just a traveling merchant.[A][NL]
+If I was still one I could just[NL]
+up and leave at a sight like this![A][X]
+
+##HouseText4
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerWoman]
+You've come to get rid of the[NL]
+soldiers roaming the countryside?[A][NL]
+Oh, thank goodness![A][NL]
+They seem to be coming from[NL]
+forts, so be careful around them![A][X]
+
+##VillageText1
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerWoman]
+I hear the sound of horses all over the place[ToggleMouthMove]...[ToggleMouthMove][A][NL]
+This should help you deal with them.[A][X]
+
+##VillageText2
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerMan]
+What's going on?[NL]
+There's so much commotion![A][NL]
+What? A fight?[A][NL]
+In that case, take this.[NL]
+It should help you out.[A][X]
+
+##VillageText3
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerWoman]
+Around here, magical energies[NL] 
+are so high they're off the charts![A][NL]
+Here, take this sword.[NL]
+It's infused with magic.[A][X]
+
+##VillageText4
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerMan]
+The sounds of wings flapping[NL] 
+just north is overwhelming![A][NL]
+Here, take this.[A][NL]
+It should back a nice punch[NL]
+to anything with wings.[A][X]
+
+##VillageText5
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerWoman]
+Here, take this with you.[A][NL]
+It should help you deal with[NL]
+all of the soldiers about.[A][X]
+
+##VillageText6
+[OpenMidRight][LoadCurrent][OpenMidLeft][LoadVillagerMan]
+This area is swarming with pirates![A][NL]
+One of them left this lying around,[NL]
+why don't you use it against them?[A][X]
+
 ## DV1Desc
 Freeze all enemies[N]
 for one turn[X]
