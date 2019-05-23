@@ -1,0 +1,8 @@
+  ContinueBattleBGM:
+  #incbin "ContinueBattleBGM.dmp"
+  
+  PUSH
+  ORG 0x71A68
+  callHack_r3(ContinueBattleBGM)
+  POP
+  
