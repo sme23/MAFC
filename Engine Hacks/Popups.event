@@ -1,7 +1,7 @@
 #ifndef POPUPS
 #define POPUPS
 
-PopRSetPopupCodeHandlers(0x0D, PopRSkillIconComponent)
+//PopRSetPopupCodeHandlers(0x0D, PopRSkillIconComponent)
 PopRSetPopupCodeHandlers(0x0E, PopRWeaponLevelComponent)
 
 ALIGN 4
@@ -13,7 +13,7 @@ gBattlePopupTable:
 	PopRBattlePopup(InitWeaponLevelUpPopup|1, WeaponRankUpPopup, 96)
 
 	// Skill system
-	PopRBattlePopup(InitLevelUpSkillPopup|1, SkillLearnedPopup, 96)
+	//PopRBattlePopup(InitLevelUpSkillPopup|1, SkillLearnedPopup, 96)
 
 	PopRBattlePopupEnd
 
@@ -30,7 +30,7 @@ gPromotionPopupTable:
 	PopRBattlePopup(PopR_InitElderRankNew, gPopup_PopR_NewWType, 96)
 
 	// Skill system
-	PopRBattlePopup(InitPromotionSkillPopup|1, SkillLearnedPopup, 96)
+	//PopRBattlePopup(InitPromotionSkillPopup|1, SkillLearnedPopup, 96)
 
 	PopRBattlePopupEnd
 

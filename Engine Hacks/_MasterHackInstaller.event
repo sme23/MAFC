@@ -37,7 +37,7 @@ ORG FreeSpaceBLRange //defined in custom definitions
 
   //clears the gamble/lunge/mercy when cancelling out of attack menu
   Unset_Attack_Flag:
-  #incbin "Skill System/Internals/unset attack flag.dmp"
+//  #incbin "Skill System/Internals/unset attack flag.dmp"
 
 #undef inBLRange
 POP
@@ -55,45 +55,45 @@ POP
   #include "DangerZone/DangerZone.event"
 
   //Event Writer ASMC
-  #include "EventWriter/EventWriter.event"
+  //#include "EventWriter/EventWriter.event"
 
   //Casual Mode (based on Event ID 0xB0)
-  #include "CasualMode/CasualMode.event"
+  //#include "CasualMode/CasualMode.event"
 
   //Movement Arrow doesn't update on allies
   #include "MovementArrowHack/MovementArrowHack.event"
 
   //negative stat boosts
-  #include "NegativeStatBoosts/NegativeStatBoosts.event"
+ // #include "NegativeStatBoosts/NegativeStatBoosts.event"
 
   //Dragon Veins
-  #include "DragonVeins/DragonVeins.event"
+  //#include "DragonVeins/DragonVeins.event"
 
   //Modular Stat Screen
-  #include "MSS/ModularStatScreen.event"
+  //#include "MSS/ModularStatScreen.event"
 
   // Save/Suspend Expansion
 
-  #ifdef USE_SAVE_EXPANSION
+  //#ifdef USE_SAVE_EXPANSION
 
     // Use new EMS-based expansion
 
-    MESSAGE "Using EMS Save/Suspend Expansion"
+   // MESSAGE "Using EMS Save/Suspend Expansion"
 
-    #include "ExpandedModularSave/ExModularSave.event"
+   // #include "ExpandedModularSave/ExModularSave.event"
 
-  #else // USE_SAVE_EXPANSION
+  //#else // USE_SAVE_EXPANSION
 
     // Use legacy suspend expansion (for compatibility)
 
-    MESSAGE "Using Legacy Suspend Expansion"
+    //MESSAGE "Using Legacy Suspend Expansion"
 
-    #include "SuspendDebuffs/SuspendExpansion.event"
+  //  #include "SuspendDebuffs/SuspendExpansion.event"
 
-  #endif // USE_SAVE_EXPANSION
+//  #endif // USE_SAVE_EXPANSION
 
   // Debuffs
-  #include "SuspendDebuffs/Debuffs.event"
+  //#include "SuspendDebuffs/Debuffs.event"
 
   //Stat Screens palette by allegiance
   // #include "StatScreenAllegiance/StatScreenAllegiance.event"
@@ -104,7 +104,7 @@ POP
   #include "Misc/PrologueSupply.event"
   
   //Item Range Fix
-  #include "FE8-Item Range Fix/FE8-Item Range EA.event"
+  //#include "FE8-Item Range Fix/FE8-Item Range EA.event"
   
   //Chapter names as text
   #include "TextChNames/TextChNames.event"
@@ -112,16 +112,16 @@ POP
   //PC and Generic Music Hack (writes to e80000/e90000)
   // #include "Misc/PCAndGenericMusic.event"
 
-  #include "EventRescue/EventRescue.event"
-  #include "EventAddTraps/EventAddTraps.event"
-  #include "EventSendToConvoy/EventSendToConvoy.event"
+  //#include "EventRescue/EventRescue.event"
+  //#include "EventAddTraps/EventAddTraps.event"
+  //#include "EventSendToConvoy/EventSendToConvoy.event"
 
   //Change Sick Status to Freeze
-  #include "Freeze/Freeze.event"
-  #include "Freeze/EventFreeze.event"
+  //#include "Freeze/Freeze.event"
+  //#include "Freeze/EventFreeze.event"
 
   ALIGN 4
-  #include "Skill System/Master Skill Installer.event"
+  //#include "Skill System/Master Skill Installer.event"
 
   #include "DisplayWRankOnLevelUp/DisplayWRankOnLevelUp.event"
 
@@ -129,14 +129,17 @@ POP
   #include "FE8-Battle Stats with Anims Off/FE8-Battle Stats Master EA File.event"
 
   ALIGN 4
-  #include "StatGetters/_InstallStatGetters.event"
+  //#include "StatGetters/_InstallStatGetters.event"
   
   ALIGN 4
-  #include "IconRework/IconRework.event"   // Allows using standard Icon routines to draw skill icons
+  #include "ModularEXP/ModularEXP.event"
+  
+  ALIGN 4
+  //#include "IconRework/IconRework.event"   // Allows using standard Icon routines to draw skill icons
   #include "PopupRework/PopupRework.event" // Allows to expand on vanilla popups by adding components
 
   ALIGN 4
   //#include "BattlePaletteRework/BattlePaletteReworkFE8.event"
 
-  #include "UnitMenu.event"
+  //#include "UnitMenu.event"
   #include "Popups.event"

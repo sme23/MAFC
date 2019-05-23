@@ -14,11 +14,11 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 PlayerUnits:
-UNIT Joshua Myrmidon Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R23 [KillingEdge,HeroCrest] NoAI
+UNIT Joshua Myrmidon Joshua Level(6,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R23 [KillingEdge,HeroCrest] NoAI
 UNIT Eirika EirikaLord Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R24 [Lightning] NoAI
 UNIT Natasha Cleric Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R24 [Mend,Rescue] NoAI
-UNIT Amelia Villager_F Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R22 [IronSword,HeroCrest] NoAI
-UNIT Ross Villager Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R22 [IronSword,HeroCrest] NoAI
+UNIT Amelia Villager_F Joshua Level(2,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R22 [IronSword,HeroCrest] NoAI
+UNIT Ross Villager Joshua Level(2,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R22 [IronSword,HeroCrest] NoAI
 UNIT
 
 BossUnits:
@@ -29,15 +29,15 @@ UNIT
 
 TurnBasedEvents:
 TurnEventPlayer(0,Turn2Event,3)
-TurnEventPlayer(0,Turn3Event,5)
-TurnEventPlayer(0,Turn4Event,7)
-TurnEventPlayer(0,Turn5Event,9)
-TurnEventPlayer(0,Turn6Event,11)
-TurnEventPlayer(0,Turn7Event,13)
-TurnEventPlayer(0,Turn8Event,15)
-TurnEventPlayer(0,Turn9Event,17)
-TurnEventPlayer(0,Turn10Event,19)
-TurnEventPlayer(0,Turn11Event,21)
+TurnEventPlayer(0,Turn3Event,6)
+TurnEventPlayer(0,Turn4Event,9)
+TurnEventPlayer(0,Turn5Event,12)
+TurnEventPlayer(0,Turn6Event,15)
+TurnEventPlayer(0,Turn7Event,18)
+TurnEventPlayer(0,Turn8Event,21)
+TurnEventPlayer(0,Turn9Event,24)
+TurnEventPlayer(0,Turn10Event,27)
+TurnEventPlayer(0,Turn11Event,30)
 END_MAIN
 
 CharacterBasedEvents:

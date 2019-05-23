@@ -2,17 +2,7 @@
 
 #include "Table Definitions.txt"
 
-#include "FE8 Nightmare modules\FE8 Character Level Up Skill Editor.event"
-
-#include "FE8 Nightmare modules\FE8 Class Level Up Skill Editor.event"
-
-#include "FE8 Nightmare modules\FE8 Class Skill Editor.event"
-
-#include "FE8 Nightmare modules\FE8 Personal Skill Editor.event"
-
-#include "FE8 Nightmare modules\FE8 Skill Animation Editor.event"
-
-#include "FE8 Nightmare modules\FE8 Skill Description Editor.event"
+#include "FE8 Nightmare modules\Modular EXP Class Table.event"
 
 #include "FE8 Nightmare modules\Chapter data editor\Chapter Data Editor.event"
 

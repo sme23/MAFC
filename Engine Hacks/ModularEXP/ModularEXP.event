@@ -1,0 +1,8 @@
+ALIGN 4
+#inctext lyn "ModularEXP.elf" "Hooks.elf"
+#define ModularEXPEntry(Character,Chapter,EventID,Multiplier,Divisor) "BYTE Character Chapter EventID Multiplier Divisor 0x00 0x00 0x00"
+ModularEXPChapterTable:
+ModularEXPEntry(Ross,0,0,2,1)
+ModularEXPEntry(Amelia,0,0,2,1)
+ModularEXPEntry(0,0,0,0,0)
+
