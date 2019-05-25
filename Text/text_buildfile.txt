@@ -282,6 +282,11 @@ to the very end![A][OpenMidRight][CloseEyes][X]
 My fate is irrelevant[ToggleMouthMove]...[ToggleMouthMove][NL]
 The world must have[.][ToggleMouthMove]...[.][ToggleMouthMove]light.[A][OpenMidRight][CloseEyes][X]
 
+##TrainRushThemeName
+Train Rush (Hat in Time)[X]
+
+##QuestBattleThemeName
+Quest Battle (TMS)[X]
 
 ## DV1Desc
 Freeze all enemies[N]
