@@ -14,4 +14,7 @@ BYTE Myrmidon Villager Villager_F 0x00
 PUSH
 ORG 0x8ADF57
 BYTE Myrmidon Villager Villager_F
+ORG 0x95E039
+BYTE 0
 POP
+

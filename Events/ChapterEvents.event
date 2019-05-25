@@ -15,14 +15,14 @@ POIN BeginningScene EndingScene
 
 PlayerUnits:
 UNIT Joshua Myrmidon Joshua Level(6,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R22 [KillingEdge,HeroCrest] NoAI
-UNIT Eirika EirikaLord Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R24 [Lightning] NoAI
+UNIT Eirika EirikaLord Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R24 [Shine] NoAI
 UNIT Natasha Cleric Joshua Level(10,Ally,0) [24,23] 0x0 0x0 0x1 REDA22R23 [Mend,Rescue] NoAI
 UNIT Amelia Villager_F Joshua Level(2,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R22 [IronSword,HeroCrest] NoAI
 UNIT Ross Villager Joshua Level(2,Ally,0) [24,23] 0x0 0x0 0x1 REDA21R23 [IronSword,HeroCrest] NoAI
 UNIT
 
 BossUnits:
-UNIT Vigarde General Vigarde Level(1,Enemy,0) [22,2] 0x0 0x0 0x0 0x1 [ShortSpear,Elixir] NeverMoveAI
+UNIT Vigarde General Vigarde Level(1,Enemy,0) [22,2] 0x0 0x0 0x0 0x1 [Tomahawk,Elixir] NeverMoveAI
 UNIT 128 Hero Vigarde Level(1,Enemy,1) [22,2] 0x0 0x0 0x1 REDA20R3 [SteelSword,HandAxe] AttackInRangeAI
 UNIT 128 Falcoknight Vigarde Level(1,Enemy,1) [22,2] 0x0 0x0 0x1 REDA24R3 [KillerLance] AttackInRangeAI
 UNIT
@@ -65,7 +65,7 @@ SHLI Fire Thunder Lightning Shine Flux Heal Mend Barrier Vulnerary Elixir PureWa
 
 ALIGN 4
 ArmoryList:
-SHLI IronSword SteelSword Lancereaver IronLance SteelLance Javelin Axereaver IronAxe SteelAxe HandAxe Swordreaver
+SHLI IronSword SteelSword Lancereaver IronLance SteelLance Javelin Axereaver
 
 ALIGN 4
 MiscBasedEvents:
@@ -196,7 +196,7 @@ ENDA
 
 VillageEvent6: //13,20
 Text(Village,VillageText6)
-VillageItem(DevilAxe)
+VillageItem(GuidingRing)
 NoFade
 ENDA
 

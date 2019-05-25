@@ -15,7 +15,7 @@ MESSAGE Used text space ends at currentOffset
 
 //Graphics
 #include "Graphics/_Master Graphics Installer.event"
-//#include "Palettes/Palette Setup.event"
+#include "Palettes/Palette Setup.event"
 
 MESSAGE First block ends at currentOffset
 

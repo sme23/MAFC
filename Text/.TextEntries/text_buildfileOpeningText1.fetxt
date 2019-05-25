@@ -82,7 +82,7 @@ To demonstrate, I will spawn a soldier.[A]
 
 ERROR: SPAWN COUNT UNDERFLOW[A][NL]
 
-WARNING: SPAWNING MEMORY OVERFLOW[A][ToggleRed][NL]
+WARNING: SPAWNING MEMORY OVERFLOW[A][ToggleRed][CloseSpeechSlow]
 
 Oh dear[ToggleMouthMove]...[ToggleMouthMove][A][X]
 

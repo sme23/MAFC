@@ -75,7 +75,7 @@ To demonstrate, I will spawn a soldier.[A]
 [MoveFarFarRight]
 [ToggleRed]ERROR: SPAWN COUNT TOO LOW[A][NL]
 ERROR: SPAWN COUNT UNDERFLOW[A][NL]
-WARNING: SPAWNING MEMORY OVERFLOW[A][ToggleRed][NL]
+WARNING: SPAWNING MEMORY OVERFLOW[A][ToggleRed][CloseSpeechSlow]
 Oh dear[ToggleMouthMove]...[ToggleMouthMove][A][X]
 
 ##OpeningText2
@@ -254,6 +254,34 @@ Hey, at least this experience was[NL]
 a good training exercise, right?[A]
 [OpenMidLeft]
 If only it was under better circumstances[ToggleMouthMove]...[ToggleMouthMove][A][X]
+
+##IllusionDesc
+An illusory soldier summoned[NL]
+by Lute's magic gone awry.[X]
+
+##EirikaDeathQuote
+[OpenMidRight][LoadEirika]
+Brother[ToggleMouthMove]... [ToggleMouthMove]I'm sorry.[A][OpenMidRight][CloseEyes][X]
+
+##JoshuaDeathQuote
+[ToggleSmile][OpenMidRight][LoadJoshua][OpenMidRight]
+I[ToggleMouthMove]... [ToggleMouthMove]I guess my luck[NL]
+finally ran out[ToggleMouthMove]... [ToggleMouthMove]Heh.[A][OpenMidRight][CloseEyes][X]
+
+##AmeliaDeathQuote
+[OpenMidRight][LoadAmelia]
+I[ToggleMouthMove]... [ToggleMouthMove]I did well, didn't I?[A][OpenMidRight][CloseEyes][X]
+
+##RossDeathQuote
+[ToggleSmile][OpenMidRight][LoadRoss]
+I[ToggleMouthMove]...[ToggleMouthMove]am a warrior[NL]
+to the very end![A][OpenMidRight][CloseEyes][X]
+
+##NatashaDeathQuote
+[OpenMidRight][LoadNatasha]
+My fate is irrelevant[ToggleMouthMove]...[ToggleMouthMove][NL]
+The world must have[.][ToggleMouthMove]...[.][ToggleMouthMove]light.[A][OpenMidRight][CloseEyes][X]
+
 
 ## DV1Desc
 Freeze all enemies[N]
